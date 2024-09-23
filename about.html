@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Ensure the body takes up the full height */
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+        /* Flexbox to push footer to the bottom */
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+        .content {
+            flex: 1;
+        }
+        /* Footer styling */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            position: relative;
+        }
+        footer .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .footer-content .footer-sections {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .footer-content .footer-sections div {
+            flex: 1;
+            padding: 20px;
+        }
+        .footer-content .social-icons a {
+            color: white;
+            font-size: 20px;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        .footer-content .social-icons a:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <!--header section-->   
+    <header>
+        <nav class="navbar">
+            <a href="#" class="logo"><img src="logo.png" alt="website logo"></a>       
+            <ul class="menu-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="product.html">Products</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main content -->
+    <div class="content">
+        <div class="about-us-container">
+            <img src="about-building.jpeg" alt="About Us Image" class="about-us-image">
+            <div class="about-us-text">About Us</div>
+            <div class="links">
+                <a href="index.html">Home</a> | <a href="#">About Us</a>
+            </div>
+        </div>     
+        <div class="company-section">
+            <div class="company-text">
+                <div class="company-heading">Company</div>
+                <img src="building.jpeg" alt="Company Image" class="company-image">
+                <p class="pra">
+                    Ryana Calendars is selling Calendar and Diary products. <br>
+                    The company advertises by distributing leaflets, printing <br>
+                    in newspapers, v.v. However, due to the rapid <br>
+                    development of the internet sector in this day and age,<br>
+                    almost everyone is focused on technology. And so we <br>
+                    decided to set up a website where people will get all the<br>
+                    information about different products easily, quickly and<br>
+                    appropriately. We who make these calendars and diaries<br>  
+                    strive to develop and bring the best sense of product <br>
+                    selection and reference to users. Our calendars and <br>
+                    diaries are printed with different messages and colors<br>
+                    with the hope that people can better understand<br>
+                    personality, people, the earth, even animals… so that<br>
+                    everyone can stay optimistic, live happily every day.<br>
+                    With Ryana Calendars, you'll be able to find the <br>
+                    calendar or diary that suits your needs, with dozens of<br>
+                    different options to help you choose the best product. 
+                </p>
+            </div>
+        </div>
+        <!-- Our Team Section -->
+        <div class="our-team-section">
+            <div class="our-team-heading">Our Team</div>
+            <div class="team-leader">
+                <!-- Team Leader 1 -->
+                <div class="team-member">
+                    <img src="team leader.jpeg" alt="Team Leader">
+                    <h1>John Doe</h1>
+                    <p style="color: #ffc800;">Team Leader</p>
+                    <p>"Life is like riding a bicycle. To keep your balance, you must keep moving."</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com"  target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <!-- Team Member 1 -->
+                <div class="team-member">
+                    <img src="team member1.jpeg" alt="Team Member 2">
+                    <h1>Jane Smith</h1>
+                    <p style="color: #ffc800;">Team Member</p>
+                    <p>“The way to get started is to quit talking and begin doing:”</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com"  target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <!-- Team Member 2 -->
+                <div class="team-member">
+                    <img src="team member2.jpeg" alt="Team Member 3">
+                    <h1>Michael Brown</h1>
+                    <p style="color: #ffc800;">Team Member</p>
+                    <p>"You only live once, but if you <br> do it right, once is enough."</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com"  target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <!-- Team Member 3 -->
+                <div class="team-member">
+                    <img src="team member.jpeg" alt="Team Member 4">
+                    <h1>Emily Davis</h1>
+                    <p style="color: #ffc800;">Team Member</p>
+                    <p>"Don't cry because it's over, smile because it happened."</p>    
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com"  target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <div id="click-button">
+                        <a href="#">learn more</a>
+                    </div>    
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+                  
+
+
+
+

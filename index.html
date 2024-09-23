@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Calender</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Bootstrap CSS for Carousel -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <style>
+
+        /* Adjust the width and height of carousel images */
+        .carousel-item img {
+            width: 90%; /* Adjust width as needed */
+            height: 400px; /* Maintain aspect ratio */
+            border-radius: 10px;
+           
+        }
+
+        .carousel {
+            width: 80%; /* Adjust the width of the carousel container */
+            margin: 0 auto; /* Center the carousel */
+        }
+
+         /* Calendar Categories Section */
+         .calendar-categories {
+            position: absolute;
+            padding-top: 1250px;
+         
+        }
+
+        #site {
+            font-size: 26px;
+            color: #ffc800;
+            margin-bottom: 10px;
+            margin-left: 300px;
+            
+        }
+        .category-links {
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+            margin-bottom: 20px;            
+        }
+        .category-btn:hover{
+            color: chocolate;
+            cursor: pointer;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+        }
+
+        .category-btn {
+            
+            color: #000;
+            cursor: pointer;
+            font-size: 16px;
+            padding: 10px 50px;
+            border: none;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .calendar-images {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 5px;
+            margin-top: 20px;
+            display: none; /* Hide images initially */
+        
+        }
+
+        .calendar-images img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 50px;
+        }
+     
+        /*card img style*/
+
+        
+  .card-container {
+    position:absolute;
+    display:flex;
+    margin-top: 130%;
+    margin-left: 70px;
+    gap: 60px;
+
+    
+
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    width: 300px;
+    transition: border-color 0.3s;
+    border: none;
+}
+
+.card:hover {
+    box-shadow: 0 12px 24px rgb(0, 0, 0, 0.3);
+    
+}
+
+.card-img {
+    width: 100%;
+    height: 180px;
+}
+
+.card-title {
+    font-size: 24px;
+    margin: 16px;
+    text-align: center;
+}
+
+.card-description {
+    font-size: 16px;
+    margin: 16px;
+    font-style: italic;
+    text-align: center;
+    color: cadetblue;
+    
+}
+
+.card-link {
+    position: static;
+    text-align: center;
+    margin: 16px;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 20px;
+}
+
+.card-link:hover {
+    cursor: pointer;
+    color:#000;
+    background-color: #ffc800;
+}
+.h3{
+    position: absolute;
+    margin-top: -140px;
+    color: #ffc800;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+}
+/*lest chat style*/
+section.slim{
+    position: absolute;
+    padding-top: 240%;
+    color: #ffc800;
+    padding-left: 30%
+
+}
+section,.slim,.next{
+    color: #000;
+    font-size: 17px;
+    text-align: center;
+}
+section .chat{
+    height: 40px;
+    width: 270px;
+    border-color:  brown;
+    border-radius: 5px;
+    border-right: none;
+    
+    
+}
+section.chat,:focus {
+    border-right: none;
+    outline: none; /* Remove default focus outline */
+    
+}
+
+
+
+section.chat,::placeholder{
+
+padding-left: 20px;
+}
+
+section.chat,.me{
+    height: 40px;
+    width: 90px;
+    border-radius: 5px;
+    padding: 10px 20px;
+    background-color: brown;
+    border: none;
+    border-left: none; /* Remove border on left side */
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    
+}
+
+/*footer*/
+
+
+    </style>
+
+</head>
+<body>
+ <!--header section-->   
+ <header>
+    <nav class="navbar">
+    <a href="#" class="logo"><img src="logo.png" alt="website,logo"></a>  
+      <ul class="menu-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="product.html">Products</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+     
+    </nav>
+ </header>
+   <!-- Carousel -->
+   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img class="d-block w-100" src="clandersimg1.jpg" alt="First slide">
+        </div>
+        <div class="carousel-item">
+            <img class="d-block w-100" src="clandersimg2.jpg" alt="Second slide">
+        </div>
+        <div class="carousel-item ">
+            <img class="d-block w-100" src="clandersimg3.jpg" alt="Third slide">
+        </div>
+        <div class="carousel-item">
+            <img class="d-block w-100" src="clandersimg4.jpg" alt="Four slide">
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+
+ <!-- Welcome Section -->
+ <div class="welcome-container">
+    <h2>Welcome</h2>
+    <br>
+    <p>Ryana Calendars is selling different types of Calendar and Diary products.
+        The company advertises by handing out leaflets, v.v. Due to the rapid development of the internet field in this day and age, the company decided to establish a website where people will get all the information about the product is different each other is available to them easily and quickly...</p>
+        <a href="#" class="link-btn">Read More...</a><br><br>
+        <hr>
+</div>
+
+<!-- Featured Product Section -->
+<div class="featured-product-container">
+    <h2>Featured Products</h2>
+   <i><p><a href="#">Top best-selling products</a></p></i> 
+   
+</div>
+
+
+    <!-- Image Gallery up Section -->
+    <div class="image-galleryup">
+        <img src="clanpro1.jpg" alt="Image 1">
+        <img src="clanpro2.jpg" alt="Image 2" >
+    </div>
+
+    <div class="image-down">
+        <img src="clanpro3.jpg" alt="Image 3">
+        <img src="clanpro4.jpg" alt="Image 4">
+        <img src="clanpro5.jpg" alt="Image 5">
+    </div>
+        
+     <div class="container">
+        <div class="text">
+            <p><i>Editors' Picks</i></p>
+           <h2>January Sales Event</h2>
+           <p><a href="#">Shop these unique finds </a></p>
+        </div>
+
+        <div class="container">
+            <div class="image-container">
+                <img src="clan1.jpg" alt="Image 1">
+                <div class="button-container">
+                    <a href="#" class="read-more-button">Read More</a>
+                </div>
+            </div>
+
+            <div class="image-container">
+                <img src="clan2.webp" alt="Image 2">
+                <div class="button-container">
+                    <a href="#" class="read-more-button">Read More</a>
+                </div>
+            </div>
+
+            <div class="image-container1">
+                <img src="clan3.jpg" alt="Image 2">
+                <div class="button-container">
+                    <a href="#" class="read-more-button">Read More</a>
+                </div>
+            </div>
+            </div>
+        
+                 <!-- Content with Second Row of Images and Paragraph -->
+       
+                 <main>
+                    <section class="image-text-container">
+                        <div class="image-text-item">
+                            <img src="clan4.jpg" alt="Image 1" class="image">
+    
+                        </div>
+                        <div class="image-text-item">
+                            <img src="clan5.webp" alt="Image 2" class="image">
+                            
+                        </div>
+                        <div class="image-text-item">
+                            <img src="clan6.jpg" alt="Image 3" class="image">
+                
+                        </div>
+                        <p class="center">Up to 60% off your favourite finds <br> <br>
+                            *Sales terms vary, subject available <br> and change. See individual listings for details.</p>
+                    </section>
+                    <div class="color">
+                        <a href="#" class="new">Read More</a>
+                    </div>
+                    <div class="color">
+                        <a href="#" class="new">Read More</a>
+                    </div>
+                     <div class="color">
+                    <a href="#" class="new">Read More</a>
+                </div>
+                </main> <br>
+          <!-- card Images -->
+           
+    <div class="card-container">
+        <h3 class="h3">You can see more news: Calendar & Diary </h3>
+        <div class="card">
+            <img src="plan1.jpg" alt="Image 1" class="card-img">
+            <h1 class="card-title">How to start journaling?</h1>
+            <p class="card-description">Daily journaling is always the most common topic that people take notes on in a notebook Journaling can help you improv</p>
+            <a href="#" class="card-link">Read More</a>
+        </div>
+        <div class="card">
+            <img src="plan2.jpg" alt="Image 2" class="card-img">
+            <h1 class="card-title">Planner Experience...</h1>
+            <p class="card-description">Carrying a handbook by your side and using it for planning, you probably won't avoid the prying</p>
+            <a href="#" class="card-link">Read More</a>
+        </div>
+        <div class="card">
+            <img src="plan3.jpg" alt="Image 3" class="card-img">
+            <h1 class="card-title">History of the calendar</h1>
+            <p class="card-description">The calendar was set in 753 BC, from the lunar cycle, so there were many deviations from the</p>
+            <a href="#" class="card-link">Read More</a>
+        </div>
+    </div>
+<!--lest chat-->
+   <section class="slim">
+        <div class="hy">
+            <h1>Let's have a chat !</h1>
+            <p class="next">Get latest updates and offers.</p><br>
+              <div class="form-container">
+            <input class="chat" type="emial" name="email" placeholder="Enter your e-mail address">
+            <button class="me" type="button" name="submit">Submit</button>
+        </div>
+
+          </div>
+          
+   </section>
+ 
+    
+
+    
+    
+        
+<!-- Scripts for Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+   
+   <!-- Footer Section -->
+  
+
+  
+</body>
+</html>
